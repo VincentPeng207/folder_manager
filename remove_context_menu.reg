@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+; 从目录右键菜单中删除"文件夹管理器"
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\FolderManager]
+[-HKEY_CLASSES_ROOT\Directory\shell\FolderManager]

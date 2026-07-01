@@ -1,0 +1,27 @@
+   ; 创建动态reg文件的脚本
+   [Code]
+   procedure CreateContextMenuRegFile();
+   var
+     Lines: TArrayOfString;
+     AppPath: String;
+   begin
+     AppPath := ExpandConstant('{app}\folder_manager.exe');
+     SetArrayLength(Lines, 14);
+     Lines[0] := 'Windows Registry Editor Version 5.00';
+     Lines[1] := '';
+     Lines[2] := '; 添加"文件夹管理器"到目录右键菜单';
+     Lines[3] := '[HKEY_CLASSES_ROOT\Directory\Background\shell\FolderManager]';
+     Lines[4] := '@="使用文件夹管理器打开"';
+     Lines[5] := Format('"Icon"="\"%s\",0"', [AppPath]);
+     Lines[6] := '';
+     Lines[7] := '[HKEY_CLASSES_ROOT\Directory\Background\shell\FolderManager\command]';
+     Lines[8] := Format('@="\"%s\" \"%%V\""', [AppPath]);
+     Lines[9] := '';
+     Lines[10] := '[HKEY_CLASSES_ROOT\Directory\shell\FolderManager]';
+     Lines[11] := '@="使用文件夹管理器打开"';
+     Lines[12] := Format('"Icon"="\"%s\",0"', [AppPath]);
+     Lines[13] := '';
+     Lines[14] := '[HKEY_CLASSES_ROOT\Directory\shell\FolderManager\command]';
+     Lines[15] := Format('@="\"%s\" \"%%V\""', [AppPath]);
+     SaveStringsToFile(ExpandConstant('{app}\add_context_menu.reg'), Lines, False);
+   end;

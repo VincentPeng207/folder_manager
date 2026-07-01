@@ -1,0 +1,87 @@
+# Build directories
+build/
+build/obj/
+build/bin/
+
+# Packaging outputs
+installer/*.exe
+installer/Output/
+installer/output/
+installer/packing copy.iss
+*.iss~
+Output/
+
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dll
+*.dylib
+
+# Compiled Static libraries
+*.a
+*.lib
+*.la
+*.lai
+
+# Executables
+*.exe
+*.out
+*.app
+
+# IDE files
+.vscode/
+.vs/
+*.swp
+*.swo
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Log files
+*.log
+*_log.txt
+icon_log.txt
+app_debug.log
+icon_debug.log
+
+# Local scratch files
+temp/
+temp_dir/
+temp_*/
+temp_*.cpp
+test_in_root.cpp
+
+# Dependency directories
+dependencies/
+libs/
+
+# Personal
+打包.md
+.agents
+.codex
+.cursor
